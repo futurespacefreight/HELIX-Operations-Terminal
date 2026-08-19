@@ -1,1 +1,58 @@
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#10151d;
+    color:white;
+    display:flex;
+}
 
+.sidebar{
+    width:260px;
+    background:#17212b;
+    min-height:100vh;
+    padding:30px;
+    box-sizing:border-box;
+}
+
+.logo h1{
+    margin:0;
+    color:#7ec9ff;
+}
+
+.logo span{
+    color:#8b97a7;
+    font-size:14px;
+}
+
+nav{
+    margin-top:40px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+nav button{
+    background:#243241;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+nav button:hover{
+    background:#35506a;
+}
+
+.content{
+    flex:1;
+    padding:40px;
+}
+
+.card{
+    margin-top:20px;
+    background:#17212b;
+    border-radius:14px;
+    padding:25px;
+}
