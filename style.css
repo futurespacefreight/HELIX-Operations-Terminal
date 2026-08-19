@@ -56,3 +56,61 @@ nav button:hover{
     border-radius:14px;
     padding:25px;
 }
+
+.topbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:64px;
+
+    background:#111923;
+
+    border-bottom:1px solid #243241;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 30px;
+
+    box-sizing:border-box;
+
+    z-index:1000;
+}
+
+.terminal-name{
+
+    color:#8fc7ff;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+}
+
+.system-info{
+
+    display:flex;
+
+    gap:30px;
+
+    color:#c7d7e8;
+
+    font-size:14px;
+
+}
+
+.sidebar{
+
+    margin-top:64px;
+
+}
+
+.content{
+
+    margin-top:64px;
+
+}
