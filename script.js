@@ -13,3 +13,17 @@ function updateClock(){
 updateClock();
 
 setInterval(updateClock,1000);
+
+function showPage(page){
+
+const pages=document.querySelectorAll(".page");
+
+pages.forEach(p=>{
+
+p.style.display="none";
+
+});
+
+document.getElementById(page).style.display="block";
+
+}
