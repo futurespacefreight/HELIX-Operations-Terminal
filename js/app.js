@@ -4,32 +4,25 @@
 
 function initializeApplication(){
 
-    console.log("1");
+    console.log("HELIX OS Initialisierung...");
 
+    // Anwendung zunächst ausblenden
     document.getElementById("app").style.display = "none";
 
-    console.log("2");
-
+    // Spielstand laden
     loadData();
 
-    console.log("3");
-
+    // Uhr starten
     updateClock();
+    setInterval(updateClock, 1000);
 
-    console.log("4");
-
-    setInterval(updateClock,1000);
-
-    console.log("5");
-
+    // Dashboard aktualisieren
     updateDashboard();
 
-    console.log("6");
-
+    // Bootsequenz starten
     startBootSequence();
-
-    console.log("7");
 
 }
 
+// HELIX starten
 initializeApplication();
