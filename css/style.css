@@ -221,3 +221,25 @@ font-size:18px;
     }
 
 }
+
+#commandFeed{
+
+    height:320px;
+
+    overflow-y:auto;
+
+    font-family:monospace;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    padding:10px;
+
+    background:#07131c;
+
+    border:1px solid #23475f;
+
+    border-radius:8px;
+
+}
