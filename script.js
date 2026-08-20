@@ -122,3 +122,22 @@ document.getElementById("app").style.display="flex";
 },400);
 
 document.getElementById("app").style.display="none";
+
+/* ======================================================
+   Dashboard aktualisieren
+====================================================== */
+
+function updateDashboard() {
+
+    document.getElementById("credits").textContent =
+        DataCore.finance.credits.toLocaleString("de-DE") + " CR";
+
+    document.getElementById("location").textContent =
+        DataCore.ship.location;
+
+    document.getElementById("mission").textContent =
+        DataCore.mission.title;
+
+}
+
+updateDashboard();
