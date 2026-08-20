@@ -28,6 +28,6 @@ function saveShipControl(){
 
     refreshInterface();
 
-    showNotification("ARES • Schiffsdaten aktualisiert");
+    aresNotify("ship");
 
 }
