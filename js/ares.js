@@ -45,6 +45,8 @@ const ARES = {
 };
 
 function aresNotify(category){
+    
+    console.log("ARES Notify:", category);
 
     const list = ARES[category];
 
