@@ -168,4 +168,8 @@ function updateDashboard() {
 
 }
 
+loadData();
+
 updateDashboard();
+
+saveData();
