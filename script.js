@@ -52,6 +52,34 @@ const DataCore = {
 
     }
 
+}
+/* ======================================================
+   Local Storage
+====================================================== */
+
+function saveData() {
+
+    localStorage.setItem(
+        "HELIX_DataCore",
+        JSON.stringify(DataCore)
+    );
+
+}
+
+function loadData() {
+
+    const savedData = localStorage.getItem("HELIX_DataCore");
+
+    if (!savedData) return;
+
+    const loaded = JSON.parse(savedData);
+
+    Object.assign(DataCore.ship, loaded.ship);
+    Object.assign(DataCore.mission, loaded.mission);
+    Object.assign(DataCore.finance, loaded.finance);
+    Object.assign(DataCore.lifeSupport, loaded.lifeSupport);
+    Object.assign(DataCore.crew, loaded.crew);
+
 };
 
 function updateClock(){
