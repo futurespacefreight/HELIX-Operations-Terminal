@@ -165,6 +165,9 @@ function updateDashboard() {
 
     document.getElementById("mission").textContent =
         DataCore.mission.title;
+        
+        saveData();
+        
 
 }
 
