@@ -16,12 +16,11 @@ function initializeApplication(){
     updateClock();
     setInterval(updateClock, 1000);
 
-    // Dashboard aktualisieren
     updateDashboard();
 
-    // Bootsequenz starten
-    startBootSequence();
+startARESBackground();
 
+startBootSequence();
 }
 
 // HELIX starten
