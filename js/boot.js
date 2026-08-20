@@ -37,10 +37,10 @@ function startBootSequence(){
 
                 document.getElementById("app").style.display = "flex";
 
-            },700);
+           },BOOT_DELAY + 300);
 
         }
 
-    },400);
+   },BOOT_DELAY);
 
 }
