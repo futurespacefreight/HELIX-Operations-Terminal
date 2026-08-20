@@ -12,6 +12,8 @@ function initializeApplication(){
 
     updateClock();
 
+    setInterval(updateClock,1000);
+
     updateDashboard();
 
     startBootSequence();
