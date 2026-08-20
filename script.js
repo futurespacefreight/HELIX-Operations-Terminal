@@ -184,3 +184,11 @@ function updateDashboard() {
 loadData();
 
 updateDashboard();
+
+function refreshInterface(){
+
+    updateDashboard();
+
+    saveData();
+
+}
