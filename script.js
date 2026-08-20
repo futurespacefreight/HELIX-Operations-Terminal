@@ -180,6 +180,15 @@ function updateDashboard() {
     document.getElementById("mission").textContent =
         DataCore.mission.title;
         
+        const locationElement = document.getElementById("location");
+
+if(DataCore.ship.area){
+
+locationElement.textContent =
+DataCore.ship.location + " • " + DataCore.ship.area;
+
+}
+        
         saveData();
         
 
