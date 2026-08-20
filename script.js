@@ -192,3 +192,16 @@ function refreshInterface(){
     saveData();
 
 }
+
+function loadShipControl(){
+
+document.getElementById("inputLocation").value =
+DataCore.ship.location;
+
+document.getElementById("inputArea").value =
+DataCore.ship.area;
+
+document.getElementById("inputDocked").checked =
+DataCore.ship.docked;
+
+}
