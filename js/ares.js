@@ -58,3 +58,30 @@ function aresNotify(category){
     aresLog(message);
 
 }
+
+/* ======================================================
+   COMMAND FEED
+====================================================== */
+
+function aresLog(message){
+
+    const feed = document.getElementById("commandFeed");
+
+    if(!feed) return;
+
+    const time = new Date().toLocaleTimeString("de-DE");
+
+    const line = document.createElement("div");
+
+    line.textContent =
+        time + "   ARES > " + message;
+
+    feed.prepend(line);
+
+    while(feed.children.length > 40){
+
+        feed.removeChild(feed.lastChild);
+
+    }
+
+}
