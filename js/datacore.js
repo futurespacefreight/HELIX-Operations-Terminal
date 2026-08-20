@@ -22,7 +22,7 @@ const DataCore = {
     },
 
     finance: {
-        credits: 2.847.600
+        credits: 2847600
     },
 
     lifeSupport: {
