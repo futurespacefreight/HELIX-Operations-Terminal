@@ -70,7 +70,15 @@ function loadData() {
 
     const savedData = localStorage.getItem("HELIX_DataCore");
 
-    if (!savedData) return;
+    if (!savedData) {
+
+        console.log("Kein Spielstand gefunden. Neuer DataCore wird erstellt.");
+
+        saveData();
+
+        return;
+
+    }
 
     const loaded = JSON.parse(savedData);
 
@@ -80,7 +88,9 @@ function loadData() {
     Object.assign(DataCore.lifeSupport, loaded.lifeSupport);
     Object.assign(DataCore.crew, loaded.crew);
 
-};
+    console.log("Spielstand erfolgreich geladen.");
+
+}
 
 function updateClock(){
 
