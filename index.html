@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>HELIX Operations Terminal</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
-    
-    <div id="bootScreen">
+
+<!-- ======================================================
+     BOOT SCREEN
+====================================================== -->
+
+<div id="bootScreen">
 
     <div class="boot-content">
 
@@ -18,7 +27,7 @@
 
         <h2>Integrated Operations System</h2>
 
-        <p>HIOS Version 0.5.0</p>
+        <p>HIOS Version 1.0.0</p>
 
         <br>
 
@@ -40,55 +49,81 @@
 
 </div>
 
+<!-- ======================================================
+     APPLICATION
+====================================================== -->
+
 <div id="app">
+
+    <!-- =======================
+         TOPBAR
+    ======================== -->
+
+    <header class="topbar">
+
+        <div class="terminal-name">
+
+            HELIX Operations Terminal
+
+        </div>
+
+        <div class="system-info">
+
+            <span id="systemStatus">🟢 ONLINE</span>
+
+            <span id="currentDate"></span>
+
+            <span id="currentTime"></span>
+
+        </div>
+
+    </header>
+
+    <!-- =======================
+         SIDEBAR
+    ======================== -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <h1>HELIX</h1>
+
+            <span>Operations Terminal</span>
+
+        </div>
+
+        <nav>
+
+            <button onclick="showPage('dashboard')">Dashboard</button>
+
+            <button onclick="showPage('missions')">Missionen</button>
+
+            <button onclick="showPage('inventory')">Inventar</button>
+
+            <button onclick="showPage('finance')">Konten</button>
+
+            <button onclick="showPage('logbook')">Logbuch</button>
+
+            <button onclick="showPage('crew')">Crew</button>
+
+            <button onclick="showPage('settings')">Einstellungen</button>
+
+            <button onclick="showPage('shipcontrol')">Ship Control</button>
+
+        </nav>
+
+    </div>
+
+    <!-- =======================
+         CONTENT
+    ======================== -->
+
+    <div class="content">
     
-<header class="topbar">
-
-    <div class="terminal-name">
-        HELIX Operations Terminal
-    </div>
-
-    <div class="system-info">
-
-        <span id="systemStatus">🟢 ONLINE</span>
-
-        <span id="currentDate"></span>
-
-
-        <span id="currentTime"></span>
-
-    </div>
-
-</header>
-<div class="sidebar">
-
-    <div class="logo">
-        <h1>HELIX</h1>
-        <span>Operations Terminal</span>
-    </div>
-
-    <nav>
-
-    <button onclick="showPage('dashboard')">Dashboard</button>
-
-    <button onclick="showPage('missions')">Missionen</button>
-
-    <button onclick="showPage('inventory')">Inventar</button>
-
-    <button onclick="showPage('finance')">Konten</button>
-
-    <button onclick="showPage('logbook')">Logbuch</button>
-
-    <button onclick="showPage('crew')">Crew</button>
-
-    <button onclick="showPage('settings')">Einstellungen</button>
-
-    <button onclick="showPage('shipcontrol')">Ship Control</button>
-</nav>
-
-</div>
-
-<div class="content">
+  <!-- ======================================================
+     DASHBOARD
+====================================================== -->
 
 <div id="dashboard" class="page">
 
@@ -96,26 +131,43 @@
 
     <div class="dashboard-grid">
 
-        <!-- LINKE SPALTE -->
+        <!-- =======================
+             LINKE SPALTE
+        ======================== -->
+
         <div class="dashboard-left">
 
             <div class="card">
 
                 <h3>Systemstatus</h3>
 
-                <p>🟢 Status: ONLINE</p>
-                <p>💳 Bord-Konto: <span id="credits"></span></p>
-                <p>📍 Standort: <span id="location"></span></p>
-                <p>🎯 Mission: <span id="mission"></span></p>
+                <p>🟢 Status:
+                    <span id="statusText">ONLINE</span>
+                </p>
+
+                <p>💳 Bord-Konto:
+                    <span id="credits"></span>
+                </p>
+
+                <p>📍 Standort:
+                    <span id="location"></span>
+                </p>
+
+                <p>🎯 Mission:
+                    <span id="mission"></span>
+                </p>
 
             </div>
 
         </div>
 
-        <!-- RECHTE SPALTE -->
+        <!-- =======================
+             RECHTE SPALTE
+        ======================== -->
+
         <div class="dashboard-right">
 
-            <div class="card">
+            <div class="card command-card">
 
                 <h3>ARES Command Feed</h3>
 
@@ -125,11 +177,32 @@
 
             <div class="card">
 
-                <h3>Systemmeldungen</h3>
+                <h3>ARES Core Status</h3>
 
-                <p>✓ Kommunikationsnetz aktiv</p>
-                <p>✓ Lebenserhaltung stabil</p>
-                <p>✓ Reaktor arbeitet nominal</p>
+                <div class="status-item">
+                    <span>ARES Core</span>
+                    <span id="aresStatus" class="status-green">● ONLINE</span>
+                </div>
+
+                <div class="status-item">
+                    <span>Kommunikation</span>
+                    <span id="commStatus" class="status-green">● NOMINAL</span>
+                </div>
+
+                <div class="status-item">
+                    <span>Lebenserhaltung</span>
+                    <span id="lifeSupportStatus" class="status-green">● STABIL</span>
+                </div>
+
+                <div class="status-item">
+                    <span>Docking</span>
+                    <span id="dockStatus" class="status-green">● ANGEDOCKT</span>
+                </div>
+
+                <div class="status-item">
+                    <span>Reaktor</span>
+                    <span id="reactorStatus" class="status-green">● 100 %</span>
+                </div>
 
             </div>
 
@@ -139,148 +212,186 @@
 
 </div>
 
-</div>
+<!-- ======================================================
+     MISSION CONTROL
+====================================================== -->
 
-<div id="missions" class="page" style="display:none">
+<div id="missions" class="page" style="display:none;">
 
-<h2>Mission Control</h2>
+    <h2>Mission Control</h2>
 
-<div class="card">
+    <div class="card">
 
-<p>Noch keine Mission vorhanden.</p>
+        <p>Noch keine Mission vorhanden.</p>
 
-</div>
-
-</div>
-
-
-<div id="inventory" class="page" style="display:none">
-
-<h2>Inventar</h2>
-
-<div class="card">
-
-<p>Scanner</p>
-<p>Datapad</p>
-<p>Laser Cutter</p>
+    </div>
 
 </div>
 
-</div>
+<!-- ======================================================
+     INVENTAR
+====================================================== -->
 
+<div id="inventory" class="page" style="display:none;">
 
-<div id="finance" class="page" style="display:none">
+    <h2>Inventar</h2>
 
-<h2>Kontoverwaltung</h2>
+    <div class="card">
 
-<div class="card">
+        <p>Scanner</p>
+        <p>Datapad</p>
+        <p>Laser Cutter</p>
 
-<p>Kontostand</p>
-
-<h1>2.847.600 Cr</h1>
-
-</div>
-
-</div>
-
-
-<div id="logbook" class="page" style="display:none">
-
-<h2>Logbuch</h2>
-
-<div class="card">
-
-<p>Keine Einträge.</p>
+    </div>
 
 </div>
 
-</div>
+<!-- ======================================================
+     FINANZEN
+====================================================== -->
 
+<div id="finance" class="page" style="display:none;">
 
-<div id="crew" class="page" style="display:none">
+    <h2>Kontoverwaltung</h2>
 
-<h2>Crew</h2>
+    <div class="card">
 
-<div class="card">
+        <h3>Bordkonto</h3>
 
-<p>Crewdaten folgen...</p>
+        <h1 id="financeCredits">
 
-</div>
+            2.847.600 CR
 
-</div>
+        </h1>
 
-
-<div id="settings" class="page" style="display:none">
-
-<h2>Einstellungen</h2>
-
-<div class="card">
-
-<p>Version 0.3.0</p>
+    </div>
 
 </div>
 
-</div>
+<!-- ======================================================
+     LOGBUCH
+====================================================== -->
 
-<div id="shipcontrol" class="page" style="display:none">
+<div id="logbook" class="page" style="display:none;">
 
-<h2>Ship Control</h2>
+    <h2>Logbuch</h2>
 
-<div class="card">
+    <div class="card">
 
-<h3>Standort</h3>
+        <p>Keine Einträge vorhanden.</p>
 
-<input
-type="text"
-id="inputLocation"
-style="width:100%;padding:10px;"
->
-
-<br><br>
-
-<h3>Bereich</h3>
-
-<input
-type="text"
-id="inputArea"
-style="width:100%;padding:10px;"
->
-
-<br><br>
-
-<label>
-
-<input
-type="checkbox"
-id="inputDocked"
->
-
-Angedockt
-
-</label>
-
-<br><br>
-
-<button onclick="saveShipControl()">
-
-Änderungen übernehmen
-
-</button>
+    </div>
 
 </div>
 
+<!-- ======================================================
+     CREW
+====================================================== -->
+
+<div id="crew" class="page" style="display:none;">
+
+    <h2>Crew</h2>
+
+    <div class="card">
+
+        <p>Crewdaten folgen ...</p>
+
+    </div>
+
 </div>
+
+<!-- ======================================================
+     EINSTELLUNGEN
+====================================================== -->
+
+<div id="settings" class="page" style="display:none;">
+
+    <h2>Einstellungen</h2>
+
+    <div class="card">
+
+        <p>HIOS Version 1.0.0</p>
+
+    </div>
+
+</div>
+
+<!-- ======================================================
+     SHIP CONTROL
+====================================================== -->
+
+<div id="shipcontrol" class="page" style="display:none;">
+
+    <h2>Ship Control</h2>
+
+    <div class="card">
+
+        <h3>Standort</h3>
+
+        <input
+            type="text"
+            id="inputLocation"
+            style="width:100%;padding:10px;">
+
+        <br><br>
+
+        <h3>Bereich</h3>
+
+        <input
+            type="text"
+            id="inputArea"
+            style="width:100%;padding:10px;">
+
+        <br><br>
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="inputDocked">
+
+            Angedockt
+
+        </label>
+
+        <br><br>
+
+        <button onclick="saveShipControl()">
+
+            Änderungen übernehmen
+
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- ======================================================
+     JAVASCRIPT MODULES
+====================================================== -->
 
 <script src="js/datacore.js"></script>
+
 <script src="js/storage.js"></script>
+
 <script src="js/clock.js"></script>
+
 <script src="js/dashboard.js"></script>
+
 <script src="js/shipcontrol.js"></script>
+
 <script src="js/ui.js"></script>
+
 <script src="js/ares.js"></script>
+
 <script src="js/boot.js"></script>
+
 <script src="js/app.js"></script>
 
 </div>
+
 </body>
+
 </html>
