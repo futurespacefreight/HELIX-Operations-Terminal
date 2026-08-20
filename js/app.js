@@ -2,48 +2,20 @@
    HELIX APP
 ====================================================== */
 
-const bootMessages = [
+function initializeApplication(){
 
-"Initializing Core...",
-"Loading Navigation...",
-"Loading DataCore...",
-"Connecting ARES...",
-"Loading Crew Database...",
-"Loading Mission Control...",
-"Synchronizing Station Link...",
-"System Online"
+    console.log("HELIX OS Initialisierung...");
 
-];
+    document.getElementById("app").style.display = "none";
 
-let bootIndex = 0;
+    loadData();
 
-document.getElementById("app").style.display="none";
+    updateClock();
 
-const bootInterval = setInterval(()=>{
+    updateDashboard();
 
-    document.getElementById("bootStatus").textContent =
-    bootMessages[bootIndex];
+    startBootSequence();
 
-    bootIndex++;
+}
 
-    if(bootIndex>=bootMessages.length){
-
-        clearInterval(bootInterval);
-
-        setTimeout(()=>{
-
-            document.getElementById("bootScreen").style.display="none";
-
-            document.getElementById("app").style.display="flex";
-
-        },700);
-
-    }
-
-},400);
-
-/* ==================================== */
-
-loadData();
-
-updateDashboard();
+initializeApplication();
