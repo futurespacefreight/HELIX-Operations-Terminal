@@ -92,37 +92,50 @@
 
 <div id="dashboard" class="page">
 
-<h2>Command Dashboard</h2>
+    <h2>Command Dashboard</h2>
 
-<div class="dashboard-grid">
+    <div class="dashboard-grid">
 
-    <div class="card">
-        <h3>🟢 System</h3>
-        <p>ONLINE</p>
+        <!-- LINKE SPALTE -->
+        <div class="dashboard-left">
+
+            <div class="card">
+
+                <h3>Systemstatus</h3>
+
+                <p>🟢 Status: ONLINE</p>
+                <p>💳 Bord-Konto: <span id="credits"></span></p>
+                <p>📍 Standort: <span id="location"></span></p>
+                <p>🎯 Mission: <span id="mission"></span></p>
+
+            </div>
+
+        </div>
+
+        <!-- RECHTE SPALTE -->
+        <div class="dashboard-right">
+
+            <div class="card">
+
+                <h3>ARES Command Feed</h3>
+
+                <div id="commandFeed"></div>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Systemmeldungen</h3>
+
+                <p>✓ Kommunikationsnetz aktiv</p>
+                <p>✓ Lebenserhaltung stabil</p>
+                <p>✓ Reaktor arbeitet nominal</p>
+
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="card">
-        <h3>💳 Bord-Konto</h3>
-        <p id="credits"></p>
-    </div>
-
-    <div class="card">
-        <h3>📍 Standort</h3>
-        <p id="location"></p>
-    </div>
-
-    <div class="card">
-        <h3>🎯 Mission</h3>
-        <p id="mission"></p>
-    </div>
-    
-    <div class="card">
-
-    <h3>ARES Command Feed</h3>
-
-    <div id="commandFeed"></div>
-
-</div>
 
 </div>
 
