@@ -46,6 +46,35 @@ if(DataCore.ship.docked){
 
 }
 
+/* ======================================================
+   LIFE SUPPORT
+====================================================== */
+
+if(DataCore.lifeSupport.oxygen >= 90){
+
+    document.getElementById("lifeSupportStatus").textContent =
+    "● STABIL";
+
+    document.getElementById("lifeSupportStatus").className =
+    "status-green";
+
+}else{
+
+    document.getElementById("lifeSupportStatus").textContent =
+    "● WARNUNG";
+
+    document.getElementById("lifeSupportStatus").className =
+    "status-yellow";
+
+}
+
+/* ======================================================
+   REAKTOR
+====================================================== */
+
+document.getElementById("reactorStatus").textContent =
+"● " + DataCore.ship.reactor + " %";
+
     if(DataCore.ship.area){
 
         locationElement.textContent =
