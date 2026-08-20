@@ -31,10 +31,6 @@ function updateDashboard() {
 function refreshInterface(){
 
     updateDashboard();
-    
-    aresNotify("system");
-    aresNotify("mission");
-    aresNotify("crew");
 
     saveData();
 
