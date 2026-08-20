@@ -4,15 +4,33 @@
 
 const DataCore = {
 
-    ship: {
-        name: "Peregrine Horizon",
-        class: "Explorer Class",
-        registry: "PHX-01",
-        location: "Mars-Station Armstrong",
-        area: "Nordlager",
-        docked: true,
-        speed: 0
-    },
+    ship:{
+
+    name:"Peregrine Horizon",
+
+    class:"Explorer Class",
+
+    registry:"PHX-01",
+
+    location:"Mars-Station Armstrong",
+
+    area:"Nordlager",
+
+    docked:true,
+
+    speed:0,
+
+    reactor:100,
+
+    hull:100,
+
+    shields:100,
+
+    power:100,
+
+    comms:true
+
+},
 
     mission: {
         title: "Kuiper Expedition",
